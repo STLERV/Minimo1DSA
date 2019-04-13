@@ -112,7 +112,7 @@ public class MyMusicImpl implements MyMusic {
 
         if (u != null) {
 
-       u.getListaplaylist().add(playlist);
+       u.addPlayList(playlist);
 
         } else {
             log.error("Usuario");

@@ -55,7 +55,8 @@ public class MyMusicImplService {
             return Response.status(201).entity(entity).build();
         } catch (UsuarioException e) {
             return Response.status(401).build();
-        }    }
+        }
+    }
 
     @POST
     @ApiOperation(value = "Añadir Usuario")
@@ -64,13 +65,13 @@ public class MyMusicImplService {
     })
     @Path("/adduser")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response addUser ( Usuari u){
+    public Response addUser(Usuari u) {
         mm.addUser(u.getIdUsuari());
         return Response.status(201).build();
 
     }
 
-    /*
+
     @POST
     @ApiOperation(value = "Añadir Cancion a PlayList Usuario")
     @ApiResponses(value = {
@@ -78,18 +79,16 @@ public class MyMusicImplService {
     })
     @Path("/addcancion")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response addCancion (@PathParam("idUser")String idUsuari, Track t,("idPlayList") String idPlayList)
-            {
-        try{
-        mm.añadirtitol("idUser",t,"idplaylist");
+    public Response addCancion(@PathParam("idUser") String idUsuari, Track t, @PathParam("idPlayList") String idPlayList) {
+        try {
+            mm.añadirtitol("idUser", t, "idplaylist");
+            return Response.status(201).build();
+
+        } catch (UsuarioException e) {
+            return Response.status(404).build();
+        }
+
 
     }
-        catch (UsuarioException e)
-        {}
-                return Response.status(201).build();
-
-
-*/
-
 }
 

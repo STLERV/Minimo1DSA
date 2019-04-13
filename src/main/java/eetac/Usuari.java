@@ -12,8 +12,11 @@ public class Usuari {
         this.idUsuari = idUsuari;
         this.listaplaylist = listaplaylist;
     }
+    public Usuari(){}
     public Usuari( String idUsuari){
+
         this.idUsuari = idUsuari;
+        this.listaplaylist = new ArrayList<PlayList>();
     }
 
     public ArrayList<PlayList> getListaplaylist() {
@@ -26,6 +29,10 @@ public class Usuari {
 
     public LinkedList<Track> getListatitol() {
         return listatitol;
+    }
+
+    public void addPlayList (PlayList pl){
+        this.listaplaylist.add(pl);
     }
 
     public void setListatitol(LinkedList<Track> listatitol) {

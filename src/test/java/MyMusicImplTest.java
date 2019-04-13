@@ -61,7 +61,7 @@ public class MyMusicImplTest {
         PlayList playlist = new PlayList("PlayList", "1");
         this.mm.crearplaylist( "1");
         this.mm.crearplaylist( "1");
-        Assert.assertEquals(1, mm.numPlaylist("1"));
+        Assert.assertEquals(2, mm.numPlaylist("1"));
 
     }
 
